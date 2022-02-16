@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<sell-header/>
+ <router-view></router-view>
+ <!-- 在Home、Search显示，在login、register隐藏 -->
+<!-- <sell-footer v-show="$router.path=='/home'||$router.path=='/search' ">
+</sell-footer> -->
+<!-- <sell-footer  v-show="$route.path=='/home'||$route.path=='/search' "></sell-footer> -->
+<!-- <sell-footer  v-show="['/home','/search'].includes($route.path) "></sell-footer> -->
+ <sell-footer  v-show="$route.meta.show "></sell-footer>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import SellFooter from './components/foot/SellFooter.vue'
+import SellHeader from './components/head/SellHeader.vue'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+name:'',
+components:{
+SellHeader,
+SellFooter
+}
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
