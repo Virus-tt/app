@@ -19,6 +19,10 @@ name:'',
 components:{
 SellHeader,
 SellFooter
+},
+mounted(){
+  //派发一个action
+this.$store.dispatch("categoryList");
 }
 }
 </script>
